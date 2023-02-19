@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Modal from "react-modal";
 import "./CheckoutPage.css";
 
 function CheckoutPage({ cartTotal }) {
@@ -10,14 +11,22 @@ function CheckoutPage({ cartTotal }) {
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   function handleSubmit(event) {
     event.preventDefault();
     setIsSubmitted(true);
   }
 
+  function handleClose() {
+    setIsOpen(false);
+  }
+
   return (
-    <div className="checkoutFormContainer">
+    <Modal isOpen={isOpen}>
+      <button className="closeButton" onClick={handleClose}>
+        X
+      </button>
       {isSubmitted ? (
         <div className="checkoutSuccess">
           <h2>Order Placed Successfully!</h2>
@@ -95,7 +104,7 @@ function CheckoutPage({ cartTotal }) {
           </div>
         </form>
       )}
-    </div>
+    </Modal>
   );
 }
 

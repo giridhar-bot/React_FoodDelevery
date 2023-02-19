@@ -5,7 +5,6 @@ import "./CartItem.css";
 function CartItem({ item, handleRemoveCartItem }) {
   return (
     <div key={item.id} className="cartItem">
-      <img src={item.image} alt={item.description} />
       <div className="cartItemDetails">
         <p>{item.description}</p>
         <p>Quantity: {item.quantity}</p>

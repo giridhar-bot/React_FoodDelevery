@@ -85,15 +85,9 @@ function ProductList() {
           onChange={handleSearch}
           className="searchBox searchBoxStyle"
         />
-
         <div className="grid productListStyle">
           {filteredProducts.map((product) => (
             <div key={product.id} className="card cardStyle">
-              <img
-                src={product.image}
-                alt={product.id}
-                className="cardMedia cardMediaStyle"
-              />
               <div className="cardContent cardContentStyle">
                 <div>
                   <h2 className="productTitle productTitleStyle">

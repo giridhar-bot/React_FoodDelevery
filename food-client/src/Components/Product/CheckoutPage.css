@@ -1,68 +1,98 @@
-.checkoutFormContainer {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  padding: 20px;
-}
-
-.checkoutFormField {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.checkoutFormField label {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.checkoutFormField input,
-.checkoutFormField textarea {
-  padding: 10px;
-  font-size: 1.2rem;
-  border: 2px solid #ccc;
-  border-radius: 5px;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-top: 5px;
-}
-
-.checkoutFormField input:focus,
-.checkoutFormField textarea:focus {
-  outline: none;
-  border-color: #1976d2;
-}
-
-.checkoutFormButtonContainer {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.checkoutFormButton {
-  padding: 10px 20px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
+.checkoutContainer {
+  background-color: #fff;
+  padding: 20px;
+  width: 400px;
   border-radius: 5px;
-  font-size: 1.2rem;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #333;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
 .checkoutSuccess {
   text-align: center;
-  padding: 20px;
 }
 
 .checkoutSuccess h2 {
-  font-size: 2rem;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
 .checkoutSuccess p {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+  margin: 5px 0;
 }
 
-.checkoutSuccess .checkoutSuccessTotal {
-  font-size: 1.5rem;
-  margin-top: 10px;
+.checkoutFormField {
+  margin-bottom: 20px;
+}
+
+.checkoutFormField label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.checkoutFormField input,
+.checkoutFormField textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.checkoutFormField input:focus,
+.checkoutFormField textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.checkoutFormField input[type="month"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.checkoutFormButtonContainer {
+  text-align: center;
+}
+
+.checkoutFormButton {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkoutFormButton:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 480px) {
+  .checkoutContainer {
+    width: 90%;
+  }
 }
