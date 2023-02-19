@@ -1,48 +1,63 @@
-import {
-  Drawer,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  ListItemSecondaryAction,
-  IconButton,
-  Typography,
-} from "@mui/material";
-import { Delete } from "@mui/icons-material";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Drawer, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import "./CartDrawer.css";
+import CartItem from "./CartItem";
+import CheckoutPage from "./CheckoutPage";
 
-function CartDrawer({
-  cartItems,
-  cartTotal,
-  isOpen,
-  handleClose,
-  handleRemoveItem,
-}) {
+function CartDrawer(props) {
+  const { cartItems, cartTotal, isOpen, handleClose, handleRemoveCartItem } =
+    props;
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+
+  function handleCheckout() {
+    setIsCheckingOut(true);
+  }
+
+  if (isCheckingOut) {
+    return <CheckoutPage cartTotal={cartTotal} />;
+  }
+
   return (
     <Drawer anchor="right" open={isOpen} onClose={handleClose}>
-      <List sx={{ p: 2, minWidth: 250 }}>
-        {cartItems.map((item) => (
-          <ListItem key={item.id}>
-            <ListItemAvatar>
-              <img src={item.image} alt={item.title} width="150" height="150" />
-            </ListItemAvatar>
-            <ListItemText
-              primary={item.title}
-              secondary={`$${item.price.toFixed(2)} x ${item.quantity}`}
-            />
-            <ListItemSecondaryAction>
-              <IconButton onClick={() => handleRemoveItem(item.id)}>
-                <Delete />
-              </IconButton>
-            </ListItemSecondaryAction>
-          </ListItem>
-        ))}
-        <ListItem sx={{ mt: 2 }}>
-          <ListItemText primary="Total:" />
-          <Typography variant="h6">${cartTotal.toFixed(2)}</Typography>
-        </ListItem>
-      </List>
+      <div className="cartDrawerContainer">
+        <div className="cartDrawerHeader">
+          <h2 className="cartDrawerTitle">Your Cart</h2>
+          <IconButton onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>
+        </div>
+        <div className="cartDrawerItems">
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty</p>
+          ) : (
+            cartItems.map((item) => (
+              <CartItem
+                key={item.id}
+                item={item}
+                handleRemoveCartItem={handleRemoveCartItem}
+              />
+            ))
+          )}
+        </div>
+        <div className="cartDrawerFooter">
+          <p className="cartDrawerTotal">Total: ${cartTotal}</p>
+          <button className="cartDrawerCheckoutButton" onClick={handleCheckout}>
+            Checkout
+          </button>
+        </div>
+      </div>
     </Drawer>
   );
 }
+
+CartDrawer.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+  cartTotal: PropTypes.number.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  handleRemoveCartItem: PropTypes.func.isRequired,
+};
 
 export default CartDrawer;

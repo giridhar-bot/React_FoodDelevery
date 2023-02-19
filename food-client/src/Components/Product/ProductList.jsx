@@ -1,22 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  Container,
-  TextField,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Typography,
-  Grid,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Badge,
-} from "@mui/material";
+
 import { Home, ShoppingCart } from "@mui/icons-material";
 import CartDrawer from "./CartDrawer";
 import "./ProductList.css";
+
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,7 +15,10 @@ function ProductList() {
     axios
       .get("http://localhost:3100/products")
       .then((response) => setProducts(response.data))
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        // Show error message to the user
+      });
   }, []);
 
   const handleSearch = (event) => {
@@ -39,113 +30,104 @@ function ProductList() {
   );
 
   const handleAddToCart = (product) => {
-    setCartItems((prevItems) => [...prevItems, product]);
+    const existingCartItem = cartItems.find((item) => item.id === product.id);
+    if (existingCartItem) {
+      setCartItems((prevItems) =>
+        prevItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCartItems((prevItems) => [...prevItems, { ...product, quantity: 1 }]);
+    }
   };
 
-  const handleRemoveCartItem = (product) => {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item.id !== product.id)
+  const handleRemoveCartItem = (id) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== id);
+    const updatedCartTotal = updatedCartItems.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
     );
+    setCartItems(updatedCartItems);
+    setCartTotal(updatedCartTotal);
   };
 
-  const cartTotal = cartItems.reduce((total, item) => total + item.price, 0);
+  const [cartTotal, setCartTotal] = useState(0);
 
-  const styles = {
-    appBar: {
-      backgroundColor: "#2196f3",
-      marginBottom: "30px",
-    },
-  };
+  useEffect(() => {
+    const total = cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+    setCartTotal(total);
+  }, [cartItems]);
 
   return (
     <div className="ProductListContainer">
-      <AppBar position="static" css={styles.appBar}>
-        <Toolbar>
-          <IconButton edge="start" color="inherit" css={styles.logo}>
+      <div className="appBar appBarStyle">
+        <div className="toolbar">
+          <button className="logo" onClick={() => console.log("Home clicked")}>
             <Home />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            css={styles.cartBadge}
-            onClick={() => setCartOpen(true)}
-          >
-            <Badge badgeContent={cartItems.length} color="secondary">
-              <ShoppingCart />
-            </Badge>
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      <Container sx={{ py: 4 }}>
-        <TextField
-          label="Search products"
-          variant="outlined"
-          size="small"
-          fullWidth
+          </button>
+          <button className="cartBadge" onClick={() => setCartOpen(true)}>
+            <div className="badge badgeStyle">{cartItems.length}</div>
+            <ShoppingCart />
+          </button>
+        </div>
+      </div>
+      <div className="container" style={{ padding: "24px" }}>
+        <input
+          type="text"
+          placeholder="Search products"
           value={searchTerm}
           onChange={handleSearch}
-          css={styles.search}
+          className="searchBox searchBoxStyle"
         />
 
-        <Grid container spacing={7} sx={{ mt: 1 }}>
+        <div className="grid productListStyle">
           {filteredProducts.map((product) => (
-            <Grid key={product.id} item xs={12} sm={6} md={4}>
-              <Card css={styles.card}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    image={product.image}
-                    title={product.id}
-                    css={styles.cardMedia}
-                  />
-                  <CardContent css={styles.cardContent}>
-                    <div>
-                      <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="h2"
-                        css={styles.productTitle}
-                      >
-                        {product.id}
-                      </Typography>
-                      <div css={styles.productRating}>
-                        {Array.from(
-                          Array(Math.round(product.rating)).keys()
-                        ).map((n) => (
-                          <span key={n}>&#11088;</span>
-                        ))}
-                      </div>
-                      <Typography variant="body2" color="textSecondary">
-                        {product.description}
-                      </Typography>
-                    </div>
-                    <Typography
-                      variant="body1"
-                      color="textSecondary"
-                      css={styles.productPrice}
-                    >
-                      ${product.price.toFixed(2)}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <button
-                  className="CartButton"
-                  onClick={() => handleAddToCart(product)}
-                >
-                  Add to cart
-                </button>
-              </Card>
-            </Grid>
+            <div key={product.id} className="card cardStyle">
+              <img
+                src={product.image}
+                alt={product.id}
+                className="cardMedia cardMediaStyle"
+              />
+              <div className="cardContent cardContentStyle">
+                <div>
+                  <h2 className="productTitle productTitleStyle">
+                    {product.description}
+                  </h2>
+                  <div className="productRating productRatingStyle">
+                    {Array.from(Array(Math.round(product.rating)).keys()).map(
+                      (n) => (
+                        <span key={n}>&#11088;</span>
+                      )
+                    )}
+                  </div>
+                  <div className="productPrice productPriceStyle">
+                    ${product.price}
+                  </div>
+                  <button
+                    className="addButton addButtonStyle"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
           ))}
-        </Grid>
-
-        <CartDrawer
-          cartItems={cartItems}
-          cartTotal={cartTotal}
-          isOpen={isCartOpen}
-          handleClose={() => setCartOpen(false)}
-          handleRemoveItem={handleRemoveCartItem}
-        />
-      </Container>
+        </div>
+      </div>
+      <CartDrawer
+        cartItems={cartItems}
+        cartTotal={cartTotal}
+        isOpen={isCartOpen}
+        handleClose={() => setCartOpen(false)}
+        handleRemoveCartItem={handleRemoveCartItem}
+      />
     </div>
   );
 }

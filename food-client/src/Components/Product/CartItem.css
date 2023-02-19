@@ -1,0 +1,38 @@
+.cartItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.cartItem img {
+  height: 80px;
+  margin-right: 16px;
+}
+
+.cartItemDetails p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cartItemDetails p:first-child {
+  font-weight: bold;
+}
+
+.cartItemDetails p:not(:first-child) {
+  color: #666;
+}
+
+.cartItemRemoveButton {
+  background-color: transparent;
+  border: none;
+  color: #f44336;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cartItemRemoveButton:hover {
+  text-decoration: underline;
+}
