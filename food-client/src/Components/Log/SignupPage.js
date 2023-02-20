@@ -30,10 +30,7 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-
-    // Check if the username and password match
     const user = existingUsers.find(
       (user) => user.username === username && user.password === password
     );
@@ -41,12 +38,10 @@ const LoginPage = () => {
       alert("Invalid username or password. Please try again.");
       return;
     }
-
-    alert("Login successful!");
     localStorage.setItem("loggedIn", true);
+    localStorage.setItem("username", user.username);
     history.push("/products");
   };
-
   return (
     <ThemeProvider theme={theme}>
       <StyledPage>

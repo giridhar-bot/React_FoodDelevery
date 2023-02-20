@@ -54,7 +54,7 @@ function App() {
             <Redirect to="/login" />
           )}
         </Route>
-        <Redirect from="/" to="/products" />
+        <Redirect exact from="/" to="/products" />
       </Switch>
     </Router>
   );
