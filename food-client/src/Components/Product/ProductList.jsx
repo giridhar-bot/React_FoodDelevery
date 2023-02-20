@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 import { Home, ShoppingCart } from "@mui/icons-material";
 import CartDrawer from "./CartDrawer";
@@ -10,6 +11,8 @@ function ProductList() {
   const [searchTerm, setSearchTerm] = useState("");
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setCartOpen] = useState(false);
+  const [cartTotal, setCartTotal] = useState(0);
+  const history = useHistory();
 
   useEffect(() => {
     axios
@@ -54,7 +57,10 @@ function ProductList() {
     setCartTotal(updatedCartTotal);
   };
 
-  const [cartTotal, setCartTotal] = useState(0);
+  const handleLogout = () => {
+    localStorage.removeItem("loggedIn");
+    history.push("/login");
+  };
 
   useEffect(() => {
     const total = cartItems.reduce(
@@ -76,6 +82,9 @@ function ProductList() {
             <ShoppingCart />
           </button>
         </div>
+        <button className="logoutButton" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
       <div className="container" style={{ padding: "24px" }}>
         <input
@@ -85,6 +94,7 @@ function ProductList() {
           onChange={handleSearch}
           className="searchBox searchBoxStyle"
         />
+
         <div className="grid productListStyle">
           {filteredProducts.map((product) => (
             <div key={product.id} className="card cardStyle">
