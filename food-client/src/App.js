@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   Redirect,
+  useHistory
 } from "react-router-dom";
 import { LoginPage, SignupPage } from "./Components/Log/SignupPage";
 import ProductList from "./Components/Product/ProductList";
@@ -12,15 +13,18 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(
     localStorage.getItem("loggedIn")
   );
+  const history = useHistory();
 
   const handleLogin = () => {
     localStorage.setItem("loggedIn", true);
     setLoggedIn(true);
+    history.push('/products');
   };
 
   const handleLogout = () => {
     localStorage.removeItem("loggedIn");
     setLoggedIn(false);
+    history.push('/login');
   };
 
   useEffect(() => {
