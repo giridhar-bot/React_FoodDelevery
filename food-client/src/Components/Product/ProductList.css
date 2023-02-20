@@ -1,6 +1,5 @@
-
 .appBar {
-  background-color: rgba(67, 13, 13, 0.598);
+  background-color: #282c34cf;
   border-bottom: 1px solid #cccccc;
   height: 56px;
   position: fixed;
@@ -83,9 +82,10 @@
 }
 
 .productRating {
-  color: #ffd700;
-  font-size: 20px;
+  color: #333333;
   margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .productPrice {

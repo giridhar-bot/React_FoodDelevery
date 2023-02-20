@@ -91,9 +91,10 @@ function ProductList() {
               <div className="cardContent cardContentStyle">
                 <div>
                   <h2 className="productTitle productTitleStyle">
-                    {product.description}
+                    Name: {product.description}
                   </h2>
                   <div className="productRating productRatingStyle">
+                    Rating:{" "}
                     {Array.from(Array(Math.round(product.rating)).keys()).map(
                       (n) => (
                         <span key={n}>&#11088;</span>
@@ -101,7 +102,7 @@ function ProductList() {
                     )}
                   </div>
                   <div className="productPrice productPriceStyle">
-                    ${product.price}
+                    Price: ${product.price}
                   </div>
                   <button
                     className="addButton addButtonStyle"
