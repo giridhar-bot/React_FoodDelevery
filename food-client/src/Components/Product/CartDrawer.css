@@ -1,6 +1,7 @@
 .cartDrawerContainer {
-  width: 400px;
+  width: 500px;
   padding: 16px;
+ background-color: crimson;
 }
 
 .cartDrawerHeader {
