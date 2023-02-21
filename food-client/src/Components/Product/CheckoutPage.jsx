@@ -30,8 +30,9 @@ function CheckoutPage({ cartTotal }) {
       {isSubmitted ? (
         <div className="checkoutSuccess">
           <h2>Order Placed Successfully!</h2>
+          <h1>Your Order Will Be Delivered Soon..............</h1>
           <p>Thank you for shopping with us.</p>
-          <p>Your order total is ${cartTotal}.</p>
+          <p>Your order total is ₹ {cartTotal}.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>

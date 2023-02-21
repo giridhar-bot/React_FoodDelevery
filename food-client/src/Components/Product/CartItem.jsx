@@ -9,7 +9,7 @@ function CartItem({ item, handleRemoveCartItem }) {
         <img src={item.image} alt={item.description} />
         <p>{item.description}</p>
         <p>Quantity: {item.quantity}</p>
-        <p>Price: ${item.price}</p>
+        <p>Price: ₹ {item.price}</p>
       </div>
       <button
         className="cartItemRemoveButton"

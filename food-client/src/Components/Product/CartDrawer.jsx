@@ -42,7 +42,7 @@ function CartDrawer(props) {
           )}
         </div>
         <div className="cartDrawerFooter">
-          <p className="cartDrawerTotal">Total: ${cartTotal}</p>
+          <p className="cartDrawerTotal">Total: ₹ {cartTotal}</p>
           <button className="cartDrawerCheckoutButton" onClick={handleCheckout}>
             Checkout
           </button>
