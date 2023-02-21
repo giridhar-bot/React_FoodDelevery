@@ -141,7 +141,7 @@ function ProductList() {
       />
       <footer className="footer">
         <div className="FooterTextContainer">
-          Food is art, and life should be colorful and delicious
+          Food is Art and life should be colorful and delicious
         </div>
       </footer>
     </div>
