@@ -62,9 +62,8 @@
   border: 1px solid black;
   border-radius: 5px;
   font-size: 16px;
-  color: #ff4d4f;
+  color: #333;
   font-weight: bold;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Styles for the container */
