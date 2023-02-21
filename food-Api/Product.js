@@ -18,7 +18,7 @@ const products = [
     id: 2,
     price: 180,
     rating: 3.2,
-    description: "Biryani",
+    description: "Chicken Biryani",
     image:
       "https://static.wixstatic.com/media/91e241_475faa4fa56341f3878699dde5ab4904~mv2.jpg/v1/fill/w_740,h_493,al_c,lg_1,q_85,enc_auto/91e241_475faa4fa56341f3878699dde5ab4904~mv2.jpg",
   },
