@@ -1,4 +1,3 @@
-/* Styles for the ProductListContainer */
 .ProductListContainer {
   width: 100%;
   margin: 0 auto;
@@ -71,6 +70,7 @@
   margin-top: 24px;
   background-color: #fff;
   border-radius: 8px;
+  background-image: url("../../Assets/image/bgimage.jpg");
 }
 
 .searchBox {
