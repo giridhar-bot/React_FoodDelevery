@@ -1,17 +1,17 @@
+/* Styles for the ProductListContainer */
 .ProductListContainer {
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  margin: 0 auto;
 }
 
+/* Styles for the AppBar */
 .appBar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 64px;
-  background-color: #3f51b5;
-  color: white;
-  padding: 0 24px;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 16px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1.9);
 }
 
 .toolbar {
@@ -20,70 +20,89 @@
 }
 
 .logo {
-  background-color: transparent;
   border: none;
-  margin-right: 16px;
-  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  margin-right: 24px;
 }
 
 .cartBadge {
-  background-color: transparent;
-  border: none;
   position: relative;
-  margin-right: 16px;
+  margin-right: 24px;
   cursor: pointer;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 16px;
 }
 
 .badge {
   position: absolute;
   top: -10px;
   right: -10px;
-  background-color: #f50057;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20px;
   height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ff4d4f;
+  color: #fff;
+  border-radius: 50%;
 }
 
 .logoutButton {
-  background-color: transparent;
-  border: none;
-  color: white;
+  background-color: #f0f0f0;
   cursor: pointer;
+  height: 2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #ff4d4f;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Styles for the container */
 .container {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5f5f5;
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: 8px;
 }
 
 .searchBox {
-  margin: 16px 0;
-  padding: 8px 16px;
+  width: 98.5%;
+  padding: 12px;
   border: none;
-  border-radius: 24px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  width: 300px;
+  border-bottom: 1px solid #f0f0f0;
   font-size: 16px;
+  color: #333;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1.9);
 }
 
-.grid {
+.productListStyle {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
-  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 24px;
 }
 
 .card {
-  background-color: white;
+  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1.1);
+  overflow: hidden;
+}
+
+.productImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .cardContent {
@@ -91,57 +110,72 @@
 }
 
 .productTitle {
-  font-size: 18px;
+  margin: 0;
+  font-size: 24px;
   font-weight: bold;
-  margin: 8px 0;
+  color: #333;
 }
 
 .productRating {
-  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  color: #ff9f1a;
+  margin: 12px 0;
+  font-size: 20px;
+}
+
+.productRatingStyle span {
+  margin-right: 4px;
 }
 
 .productPrice {
-  margin: 8px 0;
+  margin: 12px 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
 }
 
 .addButton {
-  background-color: #3f51b5;
-  color: white;
   border: none;
-  border-radius: 24px;
-  padding: 8px 16px;
+  background-color: #ff4d4f;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
   cursor: pointer;
-  margin-top: 16px;
+  transition: background-color 0.2s ease;
 }
 
-.drawer {
-  width: 320px;
+.addButton:hover {
+  background-color: #ff6f6f;
 }
 
-.drawerHeader {
+.footer {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1.9);
+}
+
+.footerLinks {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 16px;
-  background-color: #3f51b5;
-  color: white;
+  justify-content: center;
+  margin-bottom: 12px;
 }
 
-.drawerList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.drawerItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 16px;
-  border-bottom: 1px solid #ddd;
-}
-
-.drawerItemTitle {
+.footerLink {
+  margin: 0 12px;
+  color: #333;
   font-size: 16px;
-  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+.footerText {
+  color: #333;
+  font-size: 14px;
 }

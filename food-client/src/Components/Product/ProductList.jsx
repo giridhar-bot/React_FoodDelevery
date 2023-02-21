@@ -81,6 +81,7 @@ function ProductList() {
             <div className="badge badgeStyle">{cartItems.length}</div>
             <ShoppingCart />
           </button>
+          <div className="pageTitle">foodie</div>
         </div>
         <button className="logoutButton" onClick={handleLogout}>
           Logout
@@ -98,6 +99,11 @@ function ProductList() {
         <div className="grid productListStyle">
           {filteredProducts.map((product) => (
             <div key={product.id} className="card cardStyle">
+              <img
+                src={product.image}
+                alt={product.description}
+                className="productImage"
+              />
               <div className="cardContent cardContentStyle">
                 <div>
                   <h2 className="productTitle productTitleStyle">
@@ -133,6 +139,11 @@ function ProductList() {
         handleClose={() => setCartOpen(false)}
         handleRemoveCartItem={handleRemoveCartItem}
       />
+      <footer className="footer">
+        <div className="FooterTextContainer">
+          Food is art, and life should be colorful and delicious
+        </div>
+      </footer>
     </div>
   );
 }

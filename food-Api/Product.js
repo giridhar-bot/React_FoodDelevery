@@ -11,121 +11,121 @@ const products = [
     price: 10.99,
     rating: 4.5,
     description: "Butter chicken",
+    image:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2021/02/butter-chicken-ac2ff98.jpg?quality=90&webp=true&resize=300,272",
   },
   {
     id: 2,
     price: 19.99,
     rating: 3.2,
     description: "Biryani",
+    image:
+      "https://static.wixstatic.com/media/91e241_475faa4fa56341f3878699dde5ab4904~mv2.jpg/v1/fill/w_740,h_493,al_c,lg_1,q_85,enc_auto/91e241_475faa4fa56341f3878699dde5ab4904~mv2.jpg",
   },
   {
     id: 3,
     price: 5.99,
     rating: 4.0,
     description: "Palak paneer",
+    image:
+      "https://www.indianveggiedelight.com/wp-content/uploads/2020/05/palak_paneer.jpg",
   },
   {
     id: 4,
     price: 12.49,
     rating: 4.8,
-    description: "Tandoori chicken",
+    description: "Lassi",
+    image:
+      "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpublic-assets.meredithcorp.io%2F6ecda729f0ffb26ffb5a9e7801b87f28%2F1663965703Indian%2520Lassi.jpg&q=60&c=sc&orient=true&poi=auto&h=512",
   },
   {
     id: 5,
     price: 9.99,
     rating: 3.5,
     description: "Samosas",
+    image:
+      "https://cdn.britannica.com/57/170657-050-C9620E39/Indian-samosa-chutney.jpg",
   },
   {
     id: 6,
     price: 29.99,
     rating: 4.2,
     description: "Dosa",
+    image:
+      "https://www.vegrecipesofindia.com/wp-content/uploads/2021/07/dosa-recipe-1-1024x1536.jpg",
   },
   {
     id: 7,
-    price: 7.99,
-    rating: 3.0,
-    description: "Gulab jamun",
+    price: 19.99,
+    rating: 4.0,
+    description: "Mutton",
+    image:
+      "https://www.thespruceeats.com/thmb/u1QyfXw4Urb2JpHwLIRIDp9TNMc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/goat-mutton-curry-1957594-hero-01-afaf638173cd47d595c7ad99a018cf01.jpg",
   },
   {
     id: 8,
-    price: 15.99,
-    rating: 4.5,
-    description: "Lassi",
-  },
-  {
-    id: 9,
-    price: 24.99,
-    rating: 4.7,
-    description: "Chole bhature",
-  },
-  {
-    id: 10,
-    price: 8.99,
-    rating: 3.9,
-    description: "Vada pav",
+    price: 29.99,
+    rating: 4.1,
+    description: "Raita",
+    image:
+      "https://dinedelicious.in/wp-content/uploads/2021/03/Boondi-Raita-3.jpg",
   },
 
   {
+    id: 9,
+    price: 8.99,
+    rating: 3.7,
+    description: "Chana Masala",
+    image:
+      "https://www.indianveggiedelight.com/wp-content/uploads/2021/01/chana-masala-instant-pot.jpg",
+  },
+  {
+    id: 10,
+    price: 14.99,
+    rating: 4.5,
+    description: "Tandoori Chicken",
+    image:
+      "https://www.foodandwine.com/thmb/1fQqPlTxkjIKNWXdzlCP1YJkt7A=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/grilled-tandoori-chicken-FT-RECIPE1021-a61b1a767cb74c3c976c85799a378968.jpg",
+  },
+  {
     id: 11,
-    price: 11.99,
-    rating: 4.1,
-    description: "Mutton biryani",
+    price: 6.99,
+    rating: 4.2,
+    description: "Aloo Gobi",
+    image:
+      "https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2017/26-may/Aloo_Gobi_Sabzi_Recipe-4.jpg",
   },
   {
     id: 12,
-    price: 6.99,
+    price: 11.99,
     rating: 3.8,
-    description: "Aloo gobi",
+    description: "Chicken Tikka Masala",
+    image:
+      "https://www.whiskaffair.com/wp-content/uploads/2017/11/Chicken-Tikka-Masala-1.jpg",
   },
   {
     id: 13,
-    price: 16.99,
-    rating: 4.4,
-    description: "Chicken tikka masala",
+    price: 7.99,
+    rating: 4.0,
+    description: "Vegetable Biryani",
+    image:
+      "https://www.authenticroyal.com/wp-content/uploads/2016/11/vegetable-biryani.jpg",
   },
   {
     id: 14,
-    price: 8.49,
-    rating: 3.6,
-    description: "Paneer makhani",
+    price: 4.99,
+    rating: 3.5,
+    description: "Papad",
+    image:
+      "https://tasteofindore.store/wp-content/uploads/2019/11/Urad-papad-Plain-Sada.jpg",
   },
   {
     id: 15,
-    price: 13.99,
+    price: 9.49,
     rating: 4.3,
-    description: "Fish curry",
-  },
-  {
-    id: 16,
-    price: 4.99,
-    rating: 2.9,
-    description: "Papdi chaat",
-  },
-  {
-    id: 17,
-    price: 20.99,
-    rating: 4.6,
-    description: "Lamb rogan josh",
-  },
-  {
-    id: 18,
-    price: 9.99,
-    rating: 3.7,
-    description: "Vegetable samosas",
-  },
-  {
-    id: 19,
-    price: 26.99,
-    rating: 4.8,
-    description: "Prawn masala",
-  },
-  {
-    id: 20,
-    price: 7.99,
-    rating: 3.4,
-    description: "Raita",
+    description: "Mango Lassi",
+    image:
+      "https://www.whiskaffair.com/wp-content/uploads/2020/05/Mango-Lassi-2-1.jpg",
   },
 ];
 

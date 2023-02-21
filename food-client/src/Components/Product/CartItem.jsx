@@ -6,6 +6,7 @@ function CartItem({ item, handleRemoveCartItem }) {
   return (
     <div key={item.id} className="cartItem">
       <div className="cartItemDetails">
+        <img src={item.image} alt={item.description} />
         <p>{item.description}</p>
         <p>Quantity: {item.quantity}</p>
         <p>Price: ${item.price}</p>
