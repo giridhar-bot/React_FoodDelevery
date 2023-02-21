@@ -8,7 +8,7 @@ app.use(express.json());
 const products = [
   {
     id: 1,
-    price: 10.99,
+    price: 250,
     rating: 4.5,
     description: "Butter chicken",
     image:
@@ -16,7 +16,7 @@ const products = [
   },
   {
     id: 2,
-    price: 19.99,
+    price: 180,
     rating: 3.2,
     description: "Biryani",
     image:
@@ -24,7 +24,7 @@ const products = [
   },
   {
     id: 3,
-    price: 5.99,
+    price: 220,
     rating: 4.0,
     description: "Palak paneer",
     image:
@@ -32,7 +32,7 @@ const products = [
   },
   {
     id: 4,
-    price: 12.49,
+    price: 50,
     rating: 4.8,
     description: "Lassi",
     image:
@@ -40,7 +40,7 @@ const products = [
   },
   {
     id: 5,
-    price: 9.99,
+    price: 10,
     rating: 3.5,
     description: "Samosas",
     image:
@@ -48,7 +48,7 @@ const products = [
   },
   {
     id: 6,
-    price: 29.99,
+    price: 60,
     rating: 4.2,
     description: "Dosa",
     image:
@@ -56,7 +56,7 @@ const products = [
   },
   {
     id: 7,
-    price: 19.99,
+    price: 600,
     rating: 4.0,
     description: "Mutton",
     image:
@@ -64,7 +64,7 @@ const products = [
   },
   {
     id: 8,
-    price: 29.99,
+    price: 120,
     rating: 4.1,
     description: "Raita",
     image:
@@ -73,7 +73,7 @@ const products = [
 
   {
     id: 9,
-    price: 8.99,
+    price: 160,
     rating: 3.7,
     description: "Chana Masala",
     image:
@@ -81,7 +81,7 @@ const products = [
   },
   {
     id: 10,
-    price: 14.99,
+    price: 310,
     rating: 4.5,
     description: "Tandoori Chicken",
     image:
@@ -89,7 +89,7 @@ const products = [
   },
   {
     id: 11,
-    price: 6.99,
+    price: 120,
     rating: 4.2,
     description: "Aloo Gobi",
     image:
@@ -97,7 +97,7 @@ const products = [
   },
   {
     id: 12,
-    price: 11.99,
+    price: 250,
     rating: 3.8,
     description: "Chicken Tikka Masala",
     image:
@@ -105,7 +105,7 @@ const products = [
   },
   {
     id: 13,
-    price: 7.99,
+    price: 150,
     rating: 4.0,
     description: "Vegetable Biryani",
     image:
@@ -113,7 +113,7 @@ const products = [
   },
   {
     id: 14,
-    price: 4.99,
+    price: 30,
     rating: 3.5,
     description: "Papad",
     image:
@@ -121,7 +121,7 @@ const products = [
   },
   {
     id: 15,
-    price: 9.49,
+    price: 60,
     rating: 4.3,
     description: "Mango Lassi",
     image:

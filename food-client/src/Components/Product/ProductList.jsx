@@ -118,7 +118,7 @@ function ProductList() {
                     )}
                   </div>
                   <div className="productPrice productPriceStyle">
-                    Price: ${product.price}
+                    Price: ₹ {product.price}
                   </div>
                   <button
                     className="addButton addButtonStyle"
