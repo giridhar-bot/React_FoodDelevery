@@ -147,7 +147,9 @@
 .addButton:hover {
   background-color: #333;
 }
-
+.card:hover {
+  background-color: #ccc;
+}
 .footer {
   text-align: center;
   background-color: #ccc;
