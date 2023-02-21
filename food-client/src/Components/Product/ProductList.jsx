@@ -107,7 +107,7 @@ function ProductList() {
               <div className="cardContent cardContentStyle">
                 <div>
                   <h2 className="productTitle productTitleStyle">
-                    Name: {product.description}
+                    {product.description}
                   </h2>
                   <div className="productRating productRatingStyle">
                     Rating:{" "}
