@@ -114,3 +114,16 @@ CheckoutPage.propTypes = {
 };
 
 export default CheckoutPage;
+
+
+// This is a React functional component called CheckoutPage that represents a modal window where the user can enter their payment details to complete the checkout process. The component receives a single prop called cartTotal which represents the total cost of the items in the shopping cart.
+
+// The component defines several state variables using the useState hook to store the user's input for name, email, address, card number, expiry date, and CVV. It also defines a boolean isSubmitted variable that determines whether the order has been successfully placed or not, and an isOpen variable that determines whether the modal window is open or not.
+
+// The component renders a Modal component from the react-modal library that displays the payment form. If the isSubmitted variable is true, it displays a success message with the order details and the total cost. Otherwise, it displays a form with input fields for the user to enter their payment details.
+
+// When the user submits the form, the handleSubmit function is called which sets the isSubmitted variable to true, triggering the display of the success message.
+
+// The component also defines a handleClose function that is called when the user clicks the close button in the top-right corner of the modal window. This function sets the isOpen variable to false, closing the modal window.
+
+// Finally, the component defines the propTypes property to validate the cartTotal prop, ensuring that it is a number and is required.
